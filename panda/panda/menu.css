@@ -1,0 +1,325 @@
+body{
+    background-color: #7b8183;
+    font-family: system-ui;
+}
+.container{
+    width: 1400px;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.container .navbar a{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: grey;
+}
+.container .navbar a:hover{
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+  }
+
+.custom-text {
+    position: relative;
+    top: -20px; /* Adjust as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+    color: blue;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 50px;
+}
+header .shopping{
+    position: relative;
+    text-align: right;
+}
+header .shopping img{
+    width: 40px;
+}
+header .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    padding: 3px 10px;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+.list .item{
+    text-align: center;
+    background-color: #DCE0E1;
+    padding: 20px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+}
+.list .item img{
+    width: 90%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.list .item .title{
+    font-weight: 600;
+}
+.list .item .price{
+    margin: 10px;
+}
+.list .item button{
+    background-color: #1C1F25;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+.card{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 500px;
+    background-color: #453E3B;
+    height: 100vh;
+    transition: 0.5s;
+}
+.active .card{
+    left: calc(100% - 500px);
+}
+.active .container{
+   transform: translateX(-200px);
+}
+
+.card{
+    overflow-y: scroll;
+}
+
+.card h1{
+    color: #E8BC0E;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.card .checkOut{
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.card .checkOut div{
+    background-color: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div:nth-child(2){
+    background-color: #1C1F25;
+    color: #fff;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 90%;
+}
+.listCard li button{
+    background-color: #fff5;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
+}
+.btn{
+    display: block;
+    margin: auto;
+    border: none;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: grey;
+}
+.btn a{
+    color: aqua;
+}
+
+
+
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+}
+
+#confirmation {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#confirmation h2 {
+    margin-top: 0;
+}
+
+#buttons {
+    margin-top: 20px;
+}
+
+#buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#buttons button:hover {
+    background-color: #0056b3;
+}
+
+.ok-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.ok-button:hover {
+    background-color: #0056b3;
+}
+
+.popup {
+    position: fixed; /* Change to fixed */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the popup */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.popup p {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Css for the form */
+#checkoutForm {
+    position: fixed; /* Change to fixed */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the form */
+    background-color: #fff; /* Set background color */
+    padding: 20px; /* Add padding for better appearance */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow for depth */
+    text-align: center; /* Center text */
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Style for form labels */
+#checkoutForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Style for form input fields */
+#checkoutForm input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Style for form submit button */
+#checkoutForm button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover effect for submit button */
+#checkoutForm button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Style for form cancel button */
+#checkoutForm button[type="button"] {
+    background-color: #f44336; /* Red color for cancel button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin for spacing */
+}
+
+/* Hover effect for cancel button */
+#checkoutForm button[type="button"]:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Adjust image for menu sections */
+.section-image-0,
+.section-image-1,
+.section-image-2,
+.section-image-3, 
+.section-image-4{
+    width: 264px; 
+    height: 375px;
+}
